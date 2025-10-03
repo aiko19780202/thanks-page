@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="ja-JP" dir="ltr">
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="language" content="ja">
+
+    <meta name="description" content="舞Paceにてお問合せフォームよりメッセージを送信された際のページです。">
+    <meta name="keywords" content="メッセージ送信完了">
+
+    <!-- インスタグラムのアイコン -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- ===============================================-->
+    <!--    Document Title-->
+    <!-- ===============================================-->
+    <title>舞Pace=My-Pace お問い合わせありがとうございました</title>
+
+
+    <!-- ===============================================-->
+    <!--    Favicons-->
+    <!-- ===============================================-->
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+    <link rel="manifest" href="manifest.json">
+    <!-- タブのアイコン-->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <meta name="msapplication-TileImage" content="mstile-150x150.png">
+    <meta name="theme-color" content="#ffffff">
+
+
+    <!-- ===============================================-->
+    <!--    Stylesheets-->
+    <!-- ===============================================-->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700&amp;display=swap" rel="stylesheet">
+    <link href="prism.css" rel="stylesheet">
+    <link href="swiper-bundle.min.css" rel="stylesheet">
+    <link href="theme.css" rel="stylesheet">
+
+    <!--<link rel="stylesheet" href="style.css"> --> <!-- CSSは下記に記載 -->
+
+    <!-- user.cssの読み込み-->
+    <link href="user.css" rel="stylesheet">
+
+
+    <!-- GoogleFontsの読み込み-->
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;700&display=swap" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Abril+Fatface" rel="stylesheet">
+  </head>
+
+  <body>
+
+    <!-- ハンバーガーメニューをヘッダーの外に移動 -->
+    <div id="nav-drawer">
+      <input type="checkbox" id="nav-input" class="nav-unshown">
+
+        <!-- トリガーだけをラベルに -->
+        <label for="nav-input" class="menu-wrapper">
+          <span class="hamburger">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+          </span>
+          <span class="menu-label">Menu</span>
+        </label>
+
+      <!-- ドロワーメニュー -->
+      <nav id="nav-content">
+        <ul class="nav-drawerList">
+          <li class="nav-drawerList-item"><a href="index.html">♪Home</a></li>
+          <li class="nav-drawerList-item"><a href="mypace_japanese.html#services">✦対応内容</a></li>
+          <li class="nav-drawerList-item"><a href="mypace_japanese.html#price">✦価格</a></li>
+          <li class="nav-drawerList-item"><a href="mypace_japanese.html#contact">✦連絡先</a></li>
+          <li class="nav-drawerList-item"><a href="mypace_japanese.html#orderflow">✦注文方法と流れ</a></li>
+          <li class="nav-drawerList-item"><a href="mypace_japanese.html#caution">✦注意事項</a></li>
+          <li class="nav-drawerList-item"><a href="mypace_japanese.html#payment">✦お支払い方法</a></li>
+          <li class="nav-drawerList-item"><a href="mypace_musicdownload.html">音楽ダウンロード</a></li>
+          <li class="nav-drawerList-item"><a href="mypace_links.html">DTMリンク集</a></li>
+          <li class="nav-drawerList-item"><a href="aboutme.html">運営者について</a></li>
+        </ul>
+      </nav>
+
+      <!-- 展開時カバー -->
+      <label id="nav-close" for="nav-input"></label>
+
+    </div>
+
+    <!-- ヘッダー本体 -->
+    <header class="header">
+      <div class="container d-flex justify-content-between align-items-center header-inner">
+        <!-- ロゴ -->
+        <a class="navbar-brand" href="index.html">舞Pace=My-Pace</a>
+
+        <!-- PC用メニュー（992px以上で表示） -->
+        <div class="menu-main d-none d-lg-flex">
+          <a class="nav-link" href="mypace_musicdownload.html">音楽ダウンロード</a>
+          <a class="nav-link" href="mypace_links.html">DTMリンク集</a>
+          <a class="nav-link" href="aboutme.html">運営者について</a>
+        </div>
+      </div>
+    </header>
+
+
+    <!-- ===============================================-->
+    <!--    Main Content-->
+    <!-- ===============================================-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top py-0">
+      <div class="container d-flex flex-column">
+
+        <!-- 上段：ロゴ＋ハンバーガー（スマホ）＋PCメニュー -->
+        <div class="container-fluid d-flex justify-content-between align-items-start flex-wrap"> <!-- ★ container → container-fluid -->
+          <div class="d-flex align-items-start">
+            <a class="navbar-brand text-white fw-bold fs-4 me-2 ms-0" href="index.html">舞Pace=My-Pace</a> <!-- ★ ms-0追加 -->
+          </div>
+
+          <!-- PC表示の1段目メニュー -->
+          <div class="d-none d-lg-flex flex-wrap menu-main">
+            <a class="nav-link" href="mypace_musicdownload.html">音楽ダウンロード</a>
+            <a class="nav-link" href="mypace_links.html">DTMリンク集</a>
+            <a class="nav-link" href="aboutme.html">運営者について</a>
+          </div>
+        </div>
+
+        <!-- PC表示の2段目メニュー（collapseの外） -->
+        <div class="d-none d-lg-flex flex-wrap menu-secondary w-100 justify-content-end">
+          <a class="nav-link nav-primary" href="index.html">Home</a>
+          <a class="nav-link nav-primary" href="mypace_japanese.html#services">対応内容</a>
+          <a class="nav-link nav-primary" href="mypace_japanese.html#price">価格</a>
+          <a class="nav-link nav-primary" href="mypace_japanese.html#contact">連絡先</a>
+          <a class="nav-link nav-primary" href="mypace_japanese.html#orderflow">注文方法と流れ</a>
+          <a class="nav-link nav-primary" href="mypace_japanese.html#caution">注意事項</a>
+          <a class="nav-link nav-primary" href="mypace_japanese.html#payment">お支払い方法</a>
+        </div>
+
+      </div>
+    </nav>
+      <!-- ナビバーここまで -->
+
+
+<main>
+
+  <!-- 送信完了メッセージ -->
+  <section id="thanks" class="bg-dark text-white py-5">
+    <div class="container px-4 text-center">
+      <h1 class="fs-lg-4 fs-md-4 fs-3 text-white mb-4 mt-2 mt-md-5 mt-lg-5">ご依頼・お問い合わせ<br>ありがとうございました。</h1>
+
+        <p class="fs-1 fs-md-2 fs-lg-2 mb-3 mb-md-4 mt-5 mt-md-5 mt-lg-5 text-white-50 text-center">
+          <!-- ✅ モバイル表示（〜575px）で表示される文言 -->
+          <span class="d-inline d-sm-none">
+            内容を確認のうえ、<br>2〜3営業日以内にご連絡いたします。
+          </span>
+
+          <!-- ✅ タブレット以上（576px〜）＝PC表示で表示される文言 -->
+          <span class="d-none d-sm-inline">
+            内容を確認のうえ、<br>2〜3営業日以内にご連絡いたします。
+          </span>
+        </p>
+
+        <p class="fs-1 fs-md-2 fs-lg-2 mb-3 mb-md-4 mt-5 mt-md-5 mt-lg-5 text-white-50 text-center">
+          <!-- ✅ モバイル表示（〜575px）で表示される文言 -->
+          <span class="d-inline d-sm-none">
+          ご入力いただいたメールアドレスに<br>返信いたしますので、<br>
+          迷惑メールフォルダもご確認ください。
+          </span>
+
+          <!-- ✅ タブレット以上（576px〜）＝PC表示で表示される文言 -->
+          <span class="d-none d-sm-inline">
+          ご入力いただいたメールアドレスに返信いたしますので、<br>
+          迷惑メールフォルダもご確認ください。
+          </span>
+        </p>
+
+      <div class="d-flex justify-content-center">
+        <a href="#" onclick="window.close(); return false;"
+          class="btn btn-success text-dark fs-1 px-5 px-lg-5 py-2 mt-4 mb-6 w-75 w-sm-50 w-lg-25 mx-auto">
+          このウィンドウを<br>閉じる
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+    <!-- ============================================-->
+    <!-- <section> Footer begin ============================-->
+
+    <!-- フッターの上の線を表示する -->
+    <div class="footer-line"></div>
+
+      <section class="pt-0 bg-dark text-white footer position-relative">
+
+        <div class="container">
+          <div class="row align-items-start flex-wrap">
+            <!-- 左：ロゴ＋その下のリンク群（変更なし） -->
+            <div class="col-lg-3 ps-lg-0 ms-lg-0">
+              <!-- ロゴ -->
+              <div class="footer-logo-wrapper mt-3 mt-lg-1">
+                <a class="navbar-brand text-black fw-bold fs-4" href="index.html">
+                  舞Pace=My-Pace
+                </a>
+              </div>
+
+              <!-- 日本語 -->
+              <p class="text-light" style="font-size: 0.9rem; margin-top: 1rem; margin-left: 2.2rem;">
+                <a href="legal_japanese.html" class="text-light text-decoration-none" target="_blank">
+                  特定商取引法に基づく表記
+                </a>
+              </p>
+
+              <!-- 英語 -->
+              <p class="text-light" style="font-size: 1.0rem; margin-top: 1rem; margin-left: 2.2rem;">
+                <a href="legal_english.html" class="text-light text-decoration-none" target="_blank">
+                  Commercial Disclosure
+                </a>
+              </p>
+
+              <!-- Instagram アカウント -->
+              <p class="text-light" style="font-size: 1.0rem; margin-top: 1rem; margin-left: 2.2rem;">
+                <a href="https://www.instagram.com/mypace_balletmusic" class="text-light text-decoration-none" target="_blank">
+                  <i class="fab fa-instagram me-2"></i>Instagram
+                </a>
+              </p>
+            </div>
+
+            <!-- 右：3ブロックを横並びで表示 -->
+            <div class="col-lg-9 d-flex flex-wrap align-items-start">
+              <!-- サービス一覧 -->
+              <div class="footer-block-wrapper d-flex">
+                <div class="footer-block ms-4">
+                  <h3 class="section-title fw-bold fs-1 text-white-50">サービス一覧</h3>
+
+                  <ul class="list-unstyled">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="mypace_japanese.html#services">対応内容</a></li>
+                    <li><a href="mypace_japanese.html#price">価格</a></li>
+                    <li><a href="mypace_japanese.html#contact">連絡先</a></li>
+                  </ul>
+                </div>
+              </div>
+
+              <!-- 注文方法 -->
+              <div class="footer-block footer-order-wrapper ms-4">
+                <ul class="list-unstyled" aria-label="注文方法">
+                  <li><a href="mypace_japanese.html#orderflow">注文方法と流れ</a></li>
+                  <li><a href="mypace_japanese.html#caution">注意事項</a></li>
+                  <li><a href="mypace_japanese.html#payment">お支払い方法</a></li>
+                </ul>
+              </div>
+
+              <!-- リンク集 -->
+              <div class="footer-block-wrapper d-flex">
+                <div class="footer-block ms-4 link-boost">
+                  <h3 class="section-title fw-bold fs-1 text-white-50">リンク集</h3>
+                  <ul class="list-unstyled">
+                    <li><a href="mypace_musicdownload.html">音楽ダウンロード</a></li>
+                    <li><a href="mypace_links.html">DTMリンク集</a></li>
+                    <li><a href="aboutme.html">運営者について</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-12">
+              <p class="footer-copyright text-gray text-start mt-1 mb-0" style="font-size: 0.9rem; padding-left: 1.2rem;">
+                Copyright © 2010 舞Pace=My-Pace
+              </p>
+            </div>
+          </div>
+
+        </div>
+      <!-- end of .container-->
+
+    </section>
+    <!-- <section> close ============================-->
+    <!-- ============================================-->
+
+
+
+
+<!-- JavaScripts -->
+<script src="popper.min.js"></script>
+<script src="bootstrap.min.js"></script>
+<script src="anchor.min.js"></script>
+<script src="is.min.js"></script>
+<script src="all.min.js"></script>
+<script src="lodash.min.js"></script>
+<script src="prism.js"></script>
+<script src="swiper-bundle.min.js"></script>
+<script src="theme.js"></script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=window.scroll"></script>
+
+</body>
+</html>
