@@ -1,0 +1,1068 @@
+/* ========================================= */
+/* 基本設定とリセット */
+/* ========================================= */
+html, body {
+  margin: 0;
+  padding: 0;
+  background-color: #ffffff;
+  scroll-behavior: auto;
+  overflow-x: hidden;
+}
+
+body {
+  padding-top: 0px;
+}
+
+main {
+  margin-top: 0;
+  background-color: #fff;
+}
+
+/* ========================================= */
+/* ヘッダー（ナビバー＋ロゴ） */
+/* ========================================= */
+
+
+/* ヘッダーの下の下線 */
+.navbar::after {
+  content: "";
+  display: block;
+  height: 1px;
+  background: linear-gradient(to right, #28a74500 0%, #28a74580 50%, #28a745 100%);
+  position: absolute;
+  bottom: 0px;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+}
+
+.navbar > .container {
+  max-width: 1140px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  padding: 0;
+  flex: none;
+}
+
+
+/* 舞Pace＝My-Paceの字ロゴ */
+.navbar-brand {
+  font-size: 2.2rem;
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+  background: linear-gradient(in srgb to right, #c8f5c0, #28a745);
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1.45;
+  margin-left: 0 !important;
+  padding-left: 0 !important;
+  transform: translateY(20px);
+  display: inline-block;
+
+  align-items: center;
+  position: relative;
+  z-index: 1002; /* 前面 */
+}
+
+/* ========================================= */
+/* メニュー構造と階層感 */
+/* ========================================= */
+
+/* PC表示のボタンメニュー */
+.menu-main {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+  transform: translateY(19px);
+  z-index: 1002; /* 前面 */
+}
+
+.menu-main .nav-link {
+  font-size: 0.95rem;
+  color: #ccc;
+  padding: 0.3rem 0.6rem;
+  margin: 0;
+  line-height: 1;
+  white-space: nowrap;
+  text-decoration: none;
+  background: none;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+/* PC表示のボタンメニュー（ボタンじゃない３リンク） */
+.menu-secondary {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: -1.5rem;
+  margin-left: auto;      /* 右寄せにする */
+  justify-content: flex-end; /* Flex内のアイテムを右寄せ */
+  z-index: 1002; /* 前面 */
+}
+
+.menu-main::-webkit-scrollbar {
+  display: none;
+}
+
+
+/* PC表示のボタンメニュー（（ボタンじゃない３リンク）右詰 */
+@media (min-width: 992px) {
+  .menu-secondary {
+    justify-content: flex-end;
+  }
+}
+
+
+
+/* ========================================= */
+/* ボタン・リンクスタイル */
+/* ========================================= */
+.nav-primary {
+  background-color: #e0dede;
+  color: #000 !important;
+  border: 1px solid #000;
+  border-radius: 999px;
+  padding: 0.1rem 0.8rem;
+  margin: 0.2rem;
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+  font-size: 1.2rem;
+  font-weight: normal;
+  text-align: center;
+  transition: all 0.3s ease;
+  line-height: 1.3;
+}
+
+.nav-primary:hover {
+  background-color: #ffffff;
+  color: #000 !important;
+  text-decoration: none;
+}
+
+/* PC表示のボタンメニュー（ボタン） */
+@media (min-width: 992px) {
+  .nav-button-lg {
+    display: inline-block;
+    padding: 0.4rem 1.2rem;
+    margin: 0.3rem 0.4rem;
+    background-color: rgba(255, 255, 255, 0.08);
+    color: rgba(255, 255, 255, 0.85);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 6px;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  .nav-button-lg:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #fff;
+  }
+}
+/* PC表示のボタンメニュー（ボタン）終わり */
+
+
+/* ========================================= */
+/* 言語切り替えボタン */
+/* ========================================= */
+.lang-toggle {
+  border: 1px solid white;
+  color: white;
+  background-color: transparent;
+  transition: background-color 0.3s ease;
+}
+
+.lang-toggle.active,
+.btn-outline-light.active {
+  background-color: white !important;
+  color: black !important;
+  border-color: white;
+}
+
+
+@media (max-width: 991.98px) {
+  .english-button {
+    display: inline-block;
+    margin-left: auto;
+    margin-right: 0;
+    width: auto;
+    text-align: right;
+  }
+}
+
+/* Japaneseボタン・Englishボタンもう少し上に表示 */
+/* モバイル（〜576px） → 少し上に */
+@media (max-width: 576px) {
+  .english-button,
+  .japanese-button {
+    margin-top: -15px !important;
+  }
+}
+
+/* タブレット（577px〜991px） → もっと上に */
+@media (min-width: 577px) and (max-width: 991px) {
+  .english-button,
+  .japanese-button {
+    margin-top: -30px !important;
+  }
+}
+
+/* PC（992px以上） → さらに上に（必要なら） */
+@media (min-width: 992px) {
+  .english-button,
+  .japanese-button {
+    margin-top: -45px !important;
+  }
+}
+
+/* ========================================= */
+/* ハンバーガーメニュー構造（モバイル） */
+/* ========================================= */
+/* ハンバーガーメニュー固定・前面表示 */
+#nav-drawer {
+  position: fixed;      /* 画面固定 */
+  top: 10px;            /* ヘッダーの上に少しずらす */
+  right: 16px;          /* 右端に配置 */
+  z-index: 9999;        /* ヘッダーより高く表示 */
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+/*メニューを開閉*/
+.nav-unshown {
+  display: none;
+}
+
+
+/*ハンバーガーアイコンとラベルを縦に並べ、中央に揃え、クリック可能に、前面に表示するラッパー　上*/
+.menu-wrapper {
+  position: relative; /* absolute → relative に変更 */
+  top: 5px;/* ハンバーガーの３本線とMenuの文字の高さを調整 */
+  right: 16px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 0;
+  z-index: 1011;
+}
+
+/*ハンバーガーアイコン*/
+.hamburger {
+  width: 30px;
+  height: 22px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  margin-top: 0px;
+  margin-right: 20px;
+  z-index: 10000
+}
+
+/*ハンバーガーアイコンの3本線*/
+.bar {
+  width: 100%;
+  height: 4px;
+  background-color: #fff;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/*ハンバーガーアイコンの下に「MENU」などのラベルが表示*/
+.menu-label {
+  font-size: 12px;
+  color: #fff;
+  margin-top: 1px;
+  margin-right: 18px;
+  z-index: 10000;
+}
+
+/* 展開メニューをヘッダー上に表示 */
+#nav-content {
+  position: fixed; /* 画面基準で固定 */
+  top: 0;          /* 画面上端 */
+  left: 0;
+  width: 90%;
+  max-width: 200px;
+  height: 100%;
+  background: #fff;
+  transform: translateX(-105%);
+  transition: transform 0.3s ease-in-out;
+  z-index: 10015;   /* ヘッダーより前面 */
+  overflow-y: auto;
+  max-height: 100dvh; /* 画面の高さに合わせる */
+  -webkit-overflow-scrolling: touch; /* iOSでの滑らかスクロール */
+}
+
+
+/* 背景オーバーレイ */
+#nav-close {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  z-index: 1019;         /* メニューの後ろ */
+  pointer-events: auto;
+
+}
+
+/* チェック時にスライドイン */
+#nav-input:checked ~ #nav-content {
+  transform: translateX(0);
+}
+
+#nav-input:checked ~ #nav-close {
+  display: block;
+  opacity: 1;
+}
+
+/*三本線の変形*/
+/* 上のバー（右下に傾ける） */
+#nav-input:checked ~ label.menu-wrapper .bar:nth-child(1) {
+  transform: rotate(45deg) translate(8.2px, 5.2px);
+}
+
+/* 中央のバー（消す） */
+#nav-input:checked ~ label.menu-wrapper .bar:nth-child(2) {
+  opacity: 0;
+}
+
+/* 下のバー（右上に傾ける） */
+#nav-input:checked ~ label.menu-wrapper .bar:nth-child(3) {
+  transform: rotate(-45deg) translate(7.8px, -5px);
+}
+
+/* ========================================= */
+/* メニュー項目 */
+.nav-drawerList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-drawerList-item > a {
+  display: block;
+  padding: 12px 16px;
+  color: #1a1a1a;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(0,0,0,0.2);
+}
+
+/* タップで色変える */
+.nav-drawerList-item a:active {
+  background-color: #e5e8f0;
+  color: #1a1a1a;
+}
+
+
+.nav-open {
+  position: relative;
+  z-index: 10010; /* カバーより前に出す */
+  pointer-events: auto;
+
+}
+
+
+/* PC表示の画面 */
+@media screen and (min-width: 992px) {
+  #nav-drawer {
+    display: none !important;
+  }
+}
+
+
+            /* モバイル表示の画面 */
+            @media screen and (max-width: 991.98px) {
+              html, body {
+                margin: 0;
+                padding: 0;
+              }
+
+              body {
+                padding-top: 60px;
+              }
+
+              /* モバイルヘッダー */
+              .header {
+                height: 60px !important;
+                display: flex;
+                align-items: center;
+                padding: 0 16px;
+                background-color: #1a1a1a;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                z-index: 1000;
+                overflow: visible !important;
+              }
+
+              /*モバイルのナビゲーションバー*/
+              .navbar {
+                height: 60px !important;
+                display: flex;
+                align-items: center;
+                padding: 0 16px;
+                overflow: visible !important;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                z-index: 1001;
+                flex-direction: row !important;
+                justify-content: space-between;
+              }
+
+              /*ロゴとハンバーガーメニューを左右に分けて配置するための内部コンテナ*/
+              .header-inner {
+                padding: 0 16px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                width: 100%;
+              }
+
+              /*モバイルの舞Pace＝My-Pace字ロゴ*/
+              .navbar-brand {
+                transform: none !important;
+                font-size: 1.6rem !important;
+                line-height: 1.2 !important;
+                margin: 0 !important;
+                padding: 0 !important;
+
+                margin-left: 0 !important;
+                margin-right: auto !important;
+                text-align: left !important;
+
+                display: block;
+                background: linear-gradient(in srgb to right, #c8f5c0, #28a745);
+
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
+                z-index: 1002;
+              }
+
+              /*ヘッダー下の余白をなくす*/
+              .top-green-space {
+                height: 0 !important;
+                overflow: hidden;
+              }
+
+              /*モバイルのナビゲーションバー内のハンバーガーメニュー*/
+              #nav-drawer {
+                position: fixed !important;
+                display: flex !important;
+                justify-content: flex-end;
+                align-items: center;
+                z-index: 2001;
+              }
+              /*モバイルのナビゲーションバー内のハンバーガーメニュー終わり*/
+              
+
+              /*音楽ダウンロード・DTMリンク集・運営者について*/
+              .menu-main {
+                transform: none !important;
+                flex-wrap: nowrap;
+                overflow-x: auto;
+                gap: 0.5rem;
+                z-index: 10004;
+              }
+
+              .menu-main .nav-link {
+                font-size: 0.9rem;
+                padding: 0.4rem 0.6rem;
+              }
+
+              .menu-secondary {
+                margin-top: 0;
+                justify-content: flex-start;
+              }
+
+              .lang-toggle {
+                font-size: 1rem;
+                padding: 0.2rem 0.6rem;
+              }
+
+              .footer {
+                padding: 1rem 0;
+              }
+
+              .inner-content {
+                padding-left: 1rem;
+                padding-right: 1rem;
+              }
+            }
+            /* モバイル表示おわり */
+
+
+/* ========================================= */
+/* ヒーローセクションと画像 */
+/* ========================================= */
+.hero h1 {
+  color: white;
+}
+
+.hero-image {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4), 0 0 0 2px rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  clip-path: inset(0.3% round 12px);
+}
+
+/* ========================================= */
+/* 細部の調整 */
+/* ========================================= */
+.mark-small {
+  font-size: 0.5em;
+  vertical-align: top;
+}
+
+.btn-success,
+.btn-outline-light {
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+  font-weight: normal;
+  font-size: 1.2rem;
+}
+
+
+img.w-50,
+img.w-md-100 {
+  border-radius: 12px;
+}
+
+
+h1 {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-weight: 400;         
+  line-height: 1.4;          /* 行間を少し広めにして読みやすく */
+  color: #ffffff;
+  font-size: 2.2rem;
+  margin-bottom: 0rem;       /* 下に余白をつけて次の要素と分離 */
+}
+
+h2 {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-weight: 400;
+  font-size: 2.0rem;
+  color: #ffffff;   
+}
+
+h3 {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-weight: 300;
+  font-size: 0.5rem;
+}
+
+h5 {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-weight: 400;
+  font-size: 2.0rem;
+  color: #1f1f1f;   
+}
+
+.video-wrapper {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+}
+
+.video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.note-small {
+  font-size: 0.9rem;
+  color: #6c757d;
+  line-height: 1.6;
+}
+
+/* モバイル表示（〜991px）アンカー押下時スクロール位置 */
+@media (max-width: 991.98px) {
+  #services,
+  #price,
+  #contact,
+  #orderflow,
+  #caution,
+  #payment {
+    scroll-margin-top: 15px; /* ← モバイル用のヘッダー高さに合わせて調整 */
+  }
+}
+
+/* PC表示（992px〜）アンカー押下時スクロール位置 */
+@media (min-width: 992px) {
+  #services,
+  #price,
+  #contact,
+  #orderflow,
+  #caution,
+  #payment {
+    scroll-margin-top: 40px; /* ← PC用のヘッダー高さに合わせて調整 */
+  }
+}
+
+.inner-content {
+  max-width: 720px;
+  width: 100%;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  margin: 0 auto;
+}
+
+/*編集依頼・お問い合わせ のボタン、モバイルのみセンタリング*/
+@media (max-width: 575.98px) {
+  .edit-request-wrapper {
+    display: flex;
+    justify-content: center;
+  }
+
+  .edit-request-wrapper .btn {
+    width: auto;
+    margin: 0 auto;
+  }
+}
+/*編集依頼・お問い合わせ のボタン、モバイルのみセンタリング 終わり*/
+
+
+/* ========================================= */
+/* フッター */
+/* ========================================= */
+.footer {
+  background-color: #1a1a1a;
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  overflow: visible;
+  padding-bottom: 2.0rem !important;
+  box-sizing: border-box;
+}
+
+.next-section {
+  margin-top: 2rem;
+  background-color: #f8f9fa;
+}
+
+
+.footer::before {
+  content: "";
+  display: block;
+  height: 1.5px;
+  background: linear-gradient(to right, #28a74500 0%, #28a74580 50%, #28a745 100%);
+  position: absolute;
+  top: -1px;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+}
+
+/* フッターの緑の字ロゴ */
+.footer-logo-wrapper {
+  margin-left: 1.0rem; /* スマホでは控えめに左寄せ */
+}
+
+@media (min-width: 992px) {
+  .footer-logo-wrapper {
+    margin-left: 2rem;
+    margin-bottom: 2rem; /* PCではしっかり右にずらす */
+  }
+}
+/* フッターの緑の字ロゴ 終わり*/
+
+/* Copyright表示位置 */
+/* 共通スタイル（ベース） */
+.footer-copyright {
+  font-size: 0.9rem;
+  margin-bottom: 0;
+  margin-top: 1rem;
+  text-align: left;
+  padding-left: 2.2rem;
+}
+
+/* PC表示（992px以上） */
+@media (min-width: 992px) {
+  .footer-copyright {
+    text-align: left;
+    margin-top: 0.5rem;
+    margin-bottom: 0.0rem;
+    padding-left: 12.4rem;
+  }
+}
+/* Copyright表示位置 終わり*/
+
+/* 共通セクションスタイル */
+.footer-section {
+  padding: 1rem 2rem;
+  min-height: 250px;
+}
+
+/* フッターのリンクの文字をそろえる */
+.footer-list-wrapper a,
+.footer-order-wrapper a,
+.footer-link-wrapper a {
+  font-size: 1rem !important;
+  line-height: 1.6;
+  color: darkgray;
+  text-decoration: none;
+  white-space: nowrap;
+  display: inline-block;
+}
+
+/* フッターのリンクの文字を折り返さない */
+.footer-list-wrapper ul,
+.footer-order-wrapper ul,
+.footer-link-wrapper ul {
+  white-space: nowrap;
+  overflow-x: auto;/* はみ出した場合に横スクロール */
+}
+/* フッターのリンクの文字を折り返さない 終わり */
+
+.col-lg-4 {
+  min-height: 250px;
+}
+
+/* 各ブロックの最小幅を設定して、横並びが崩れないようにする */
+.footer-block {
+  min-width: 180px;
+}
+
+/* 見出しのスタイル：フォントサイズ・色・余白を統一 */
+.section-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #ccc;
+  text-align: left;
+  }
+
+/* モバイルのリンクタイトル表示位置 */
+@media (max-width: 991.98px) {
+  .section-title {
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+  }
+}
+
+/* PCのリンクタイトル表示位置 */
+@media (min-width: 992px) {
+  .section-title {
+    margin-top: 2.2rem;
+    margin-bottom: 0.5rem;
+  }
+}
+
+
+/* リンクのスタイル：文字サイズ・色・余白・折り返し防止 */
+.footer-block a {
+  font-size: 1rem;
+  color: darkgray;
+  text-decoration: none;
+  display: block;
+  /* margin-bottom: 0.4rem;*/
+  white-space: nowrap;
+}
+
+/* PC表示時：表示位置を右にずらす */
+@media (min-width: 992px) {
+  .footer-block-wrapper {
+    display: flex;
+    justify-content: flex-start; /* 左寄せで余白を効かせる */
+    gap: 2rem; /* ブロック間の余白を均等にする（任意） */
+  }
+}
+
+@media (min-width: 992px) {
+  .footer-block.ms-4 {
+    transform: translateX(12rem);
+  }
+
+  .footer-block.ms-4.link-boost {
+    transform: translateX(16rem); /* ← 他の列よりさらに右に寄せる */
+  }
+}
+
+/* モバイル表示時：横並びを縦並びに切り替える */
+@media (max-width: 991.98px) {
+  .d-flex {
+    flex-direction: column;
+  }
+}
+
+/* モバイル表示時：空見出し非表示 */
+@media (max-width: 991.98px) {
+  .blank-title {
+    display: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+}
+
+/* モバイル表示時 リンクの行間をそろえる */
+@media (max-width: 991.98px) {
+  .footer-block ul li a {
+    display: block;
+    margin: 0.5rem 0;
+    line-height: 1.6;
+  }
+
+  .footer-block ul li {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .footer-block ul {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .footer-block .blank-title {
+    display: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    height: 0 !important;
+  }
+
+  .footer-block .blank-title + ul {
+    margin-top: 0 !important;
+  }
+}
+
+/* PC表示時の見た目 */
+@media (min-width: 992px) {
+  .footer-block a {
+    display: block;
+    margin-bottom: 0.4rem;
+    line-height: 1.6;
+  }
+
+  .footer-list-wrapper a,
+  .footer-order-wrapper a,
+  .footer-link-wrapper a {
+    display: inline-block;
+    margin: 0;
+  }
+}
+
+
+@media (min-width: 992px) {
+  .footer-block.ms-4 {
+    transform: translateX(12rem);
+  }
+
+  .footer-order-wrapper a {
+    display: inline-block;
+    margin-bottom: 0.4rem;
+    line-height: 1.6;
+  }
+
+  .footer-order-wrapper ul {
+    margin: 0;
+    padding: 0;
+  }
+
+  .footer-order-wrapper ul li {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+/* 注文方法列を下に下げる */
+@media (min-width: 992px) {
+  .footer-order-wrapper {
+    margin-top: 4.5rem; /* ← この値で縦位置を調整できます */
+  }
+}
+
+/* フッター終わり */
+
+
+/* ========================================= */
+/* mypace_japanese */
+/* ========================================= */
+
+/* モバイル表示時、アイコンと見出しを改行せずに並列に */
+@media (max-width: 991.98px) {
+  .mobile-row {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: flex-start !important;
+    align-items: flex-start !important;
+    flex-wrap: nowrap !important;
+    white-space: nowrap !important;
+    padding-left: 2.1rem !important;
+    width: 100% !important;
+  }
+
+  .mobile-row i,
+  .mobile-row span {
+    white-space: nowrap !important;
+    display: inline-block !important;
+  }
+}
+
+
+
+/* モバイル表示時、アイコンと見出しの左余白解除 */
+@media (min-width: 992px) {
+  .mobile-row {
+    padding-left: 0 !important;
+  }
+}
+
+/* 葉っぱアイコン以降 */
+@media (max-width: 768px) { /* 768pxは一般的なモバイルのブレークポイントです */
+  .offer-list-item {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: flex-start !important;
+  }
+}
+
+/* 対応内容欄 モバイル表示時アイコンの右横に見出し */
+@media (max-width: 575.98px) {
+  .d-flex.align-items-end {
+    display: flex !important;
+    align-items: flex-end !important;
+  }
+}
+
+/* 対応内容欄 モバイル表示時詳細中央揃え */
+@media (max-width: 576px) {
+  .mobile-center {
+    text-align: center;
+  }
+}
+
+/* 対応内容欄 区切り線統一 */
+.hr-divider {
+  border: none;
+  border-top: 1px solid rgba(0, 0, 0, 0.1); /* 限りなく薄いグレー */
+  width: 100%;
+  max-width: 1000px;
+  margin: 1.5rem auto;
+  background-color: transparent;
+  box-sizing: border-box;
+}
+
+/* 編集例動画 白字見出しフォントの大きさ */
+/* デフォルト：モバイル用（小さめ） */
+.heading-lg {
+  font-size: 1.4rem;
+}
+.heading-md {
+  font-size: 1.2rem;
+}
+
+/* PC用（768px以上） */
+@media (min-width: 768px) {
+  .heading-lg {
+    font-size: 1.8rem;
+  }
+  .heading-md {
+    font-size: 1.6rem;
+  }
+}
+
+/* h4のフォントを小さく編集例①② */
+/* モバイル表示 */
+h4.heading-example {
+  font-size: 18px;
+  line-height: 1.2;
+}
+/* PC表示 */
+@media (min-width: 768px) {
+  h4.heading-example {
+    font-size: 22px;
+    line-height: 1.5;
+  }
+}
+
+/* Youtube動画の下の緑の背景つめる */
+.ratio {
+  margin-bottom: 1rem !important;
+}
+
+iframe {
+  display: block;
+  margin-bottom: 1rem !important;
+}
+
+.swiper-slide,
+.d-block.d-md-none > div {
+  margin-bottom: 1rem !important;
+}
+
+section.bg-dark {
+  padding-bottom: 1rem !important;
+}
+/* Youtube動画の下の緑の背景つめる 終わり*/
+
+
+
+/* その際の修正代金 モバイルのみ改行 */
+.mobile-break::before {
+  content: "";
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .mobile-break::before {
+    content: "\A";       /* 改行コード */
+    white-space: pre-line;
+    display: inline;     /* インラインのまま改行 */
+  }
+}
+/* その際の修正代金 モバイルのみ改行 終わり*/
+
+/* 音源データ送付 下の余白をつめる */
+.contact-data-send {
+  padding-left: 1rem;
+  padding-top: 3rem;
+  padding-bottom: 1.5rem; /* PC用の余白（必要なら） */
+}
+
+@media (max-width: 767px) {
+  .contact-data-send {
+    padding-bottom: 0.0rem !important; /* モバイル用に詰める */
+  }
+}
+/* 音源データ送付 下の余白をつめる */
+
+/* 見出しアイコン分左へ寄せる */
+.shift-left {
+  transform: translateX(-25px); /* ← 画像の幅60pxの半分。ぴったり中央に見せるための補正 */
+}
+/* 見出しアイコン分左へ寄せる　終わり */
+
+
+/*                             */
+/*    コンタクトフォーム        */
+/* 入力欄の高さと文字サイズを調整 */
+.form-control {
+  height: 3.2rem;         /* ← 高さを少し抑える（通常は約3.5rem） */
+  font-size: 1.1rem;      /* ← 文字サイズを少し大きく（通常は1rem） */
+}
+
+/* テキストエリアだけ別で調整 */
+textarea.form-control {
+  height: auto;           /* ← rows指定があるので高さは自動 */
+  font-size: 1.2rem;      /* ← 文字サイズだけ少し大きく */
+  line-height: 1.6;       /* ← 呼吸感を整える */
+}
+/*    コンタクトフォーム  終わり      */
+
